@@ -8,7 +8,12 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="CameraController.cs" t="Include" />
+          <e p="CharacterData.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GameplaySettings.cs" t="Include" />
+          <e p="MousePitch.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
+          <e p="PlayerInput.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

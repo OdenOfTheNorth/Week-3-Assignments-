@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
-
+namespace FG
+{
     [RequireComponent(typeof(Rigidbody),typeof(CapsuleCollider))]
-    public class Movement : MonoBehaviour
+    public class CharacterMovement : MonoBehaviour
     {
-        private Transform cam;
         [NonSerialized] public float forwardInput;
         [NonSerialized] public float sidewaysInput;
         [NonSerialized] public float turnInput;
@@ -33,7 +33,6 @@ using UnityEngine;
 
         private void Awake()
         {
-            cam = Camera.main.transform;
             _transform = transform;
             _body = GetComponent<Rigidbody>();
             _capsuleCollider = GetComponent<CapsuleCollider>();
@@ -43,8 +42,9 @@ using UnityEngine;
         private void LateUpdate()
         {
             //Rotate
-            _body.MoveRotation(cam.rotation * Quaternion.Euler(Vector3.up  * turnInput));
-
+            _body.MoveRotation(_body.rotation * Quaternion.Euler(Vector3.up  * turnInput));
+            
+            
             //Move
             _moveDirection = (sidewaysInput * _transform.right + forwardInput * _transform.forward).normalized;
             _inputAmount = Mathf.Clamp01(Mathf.Abs(forwardInput) + Mathf.Abs(sidewaysInput));
@@ -121,3 +121,4 @@ using UnityEngine;
             _body.velocity = velocity;
         }
     }
+}
