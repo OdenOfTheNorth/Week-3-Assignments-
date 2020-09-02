@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 445754002}
   - component: {fileID: 445754006}
   - component: {fileID: 445754005}
+  - component: {fileID: 445754007}
   m_Layer: 0
   m_Name: FPS_Player
   m_TagString: Untagged
@@ -275,6 +276,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 1.2
   _characterData: {fileID: 11400000, guid: cb2b53e911f9fc54c967b365a6696b09, type: 2}
+--- !u!114 &445754007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445754001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab20e98f85148a40be7a20388d57e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
