@@ -34,11 +34,11 @@ public class CameraController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
 
         yRotation -= mouseY;
-        //xRotation -= mouseX;
+        xRotation -= mouseX;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
         
         
-        ///CenterPoint.transform.rotation = Quaternion.Euler(xRotation,-yRotation,0f);
+        CenterPoint.transform.rotation = Quaternion.Euler(xRotation,-yRotation,0f);
         
         if (Input.GetButton("Fire2"))
         {

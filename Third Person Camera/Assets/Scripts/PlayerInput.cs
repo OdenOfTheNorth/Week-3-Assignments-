@@ -5,19 +5,21 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private Movement _movemant;
-    private CameraController _mousePitch;
+    private MousePitch _mousePitch;
     private Camera cam;
 
     private void Awake()
     {
         _movemant = GetComponent<Movement>();
+        _mousePitch = GetComponent<MousePitch>();
+
         cam = Camera.main;
     }
 
     private void Update()
     {
         
-        _movemant.turnInput = Input.GetAxis("Mouse X") * GameplaySettings.mouseSensitivity.x;
+        //_movemant.turnInput = Input.GetAxis("Mouse X") * GameplaySettings.mouseSensitivity.x;
         //_mousePitch.input = Input.GetAxis("Mouse Y") * GameplaySettings.mouseSensitivity.y;
         
         _movemant.forwardInput = Input.GetAxis("Vertical");

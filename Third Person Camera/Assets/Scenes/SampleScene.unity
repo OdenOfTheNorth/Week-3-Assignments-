@@ -2842,7 +2842,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15144
+  m_Name: pb_Mesh20562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3371,6 +3371,7 @@ GameObject:
   - component: {fileID: 1633009447}
   - component: {fileID: 1633009449}
   - component: {fileID: 1633009450}
+  - component: {fileID: 1633009451}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3448,5 +3449,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33ee9ae2b9b5f2a419658ff0c4fb0630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1633009451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633009445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d293dce59e0dedf4c9ec0c1afd2bf038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

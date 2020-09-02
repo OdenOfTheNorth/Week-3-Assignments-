@@ -34,7 +34,7 @@ public class MousePitch : MonoBehaviour
 
         float angleX = 2f * Mathf.Deg2Rad * Mathf.Atan(rotation.x);
         angleX = Mathf.Clamp(angleX, _pitchLimit.x, _pitchLimit.y);
-        rotation.x = Mathf.Tan(Mathf.Deg2Rad * angleX * 0.5);
+        rotation.x = Mathf.Tan(Mathf.Deg2Rad * angleX * 0.5f);
 
         return rotation;
     }*/
