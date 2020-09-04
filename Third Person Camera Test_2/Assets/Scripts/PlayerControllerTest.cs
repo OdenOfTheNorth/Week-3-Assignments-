@@ -10,34 +10,20 @@ public class PlayerControllerTest : MonoBehaviour
     
     [NonSerialized] public float forwardInput;
     [NonSerialized] public float sidewaysInput;
-    [NonSerialized] public float turnInput;
-    [NonSerialized] public bool runInput;
     [NonSerialized] public bool jumpInput;
-    [NonSerialized] public bool crouchInput;
-    
     [SerializeField] private CharacterData _characterData;
     [SerializeField] private float maxDistance = 2f;
 
     
     private Rigidbody rigidbody;
     private Transform cam;
-    private Transform _transform;
     private CapsuleCollider _capsuleCollider;
     
     private Vector3 moveDirection;
-    private Vector2 _originalCapsuleSize;
-
-    private float _currentSpeed;
-    private float _adjustVerticalVelocity;
-    private float _inputAmount;
-    
+  
     private float speed = 1000f;
     private float turnSpeed = 10f;
-    private float turnSpeedVelocity;
-    private Vector3 gravity = Physics.gravity;
-    
-    public bool IsCrouching { get; private set; }
-    public bool IsRuning { get; private set; }
+
 
 
     void Awake()
@@ -45,15 +31,10 @@ public class PlayerControllerTest : MonoBehaviour
         _capsuleCollider = GetComponent<CapsuleCollider>();
         rigidbody = GetComponent<Rigidbody>();
         cam = Camera.main.transform;
-        gravity = Physics.gravity;
-        _originalCapsuleSize.Set(_capsuleCollider.radius,_capsuleCollider.height);
     }
 
     void FixedUpdate()
     {
-        _inputAmount = Mathf.Clamp01(Mathf.Abs(forwardInput * speed) + Mathf.Abs(sidewaysInput * speed));
-        //_currentSpeed = rigidbody.velocity.magnitude;
-        
         Vector3 rightFromCamera = new Vector3(cam.right.x, transform.right.y, cam.right.z);
         Vector3 forwardFromCamera = new Vector3(cam.forward.x, transform.forward.y, cam.forward.z);
         
@@ -94,8 +75,6 @@ public class PlayerControllerTest : MonoBehaviour
         Debug.DrawRay(transform.position + _capsuleCollider.center, Vector3.down * maxDistance, Color.red);
         return Physics.Raycast(transform.position + _capsuleCollider.center, Vector3.down, maxDistance);
     }
-    
 
 
-    
 }

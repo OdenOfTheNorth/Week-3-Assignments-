@@ -7,6 +7,7 @@ namespace FG
     {
         private PlayerControllerTest PlayerControllerTest;
         private CameraController cameraController;
+        private OrbitCamera secondCamera;
 
         private void Awake()
         {
@@ -16,7 +17,13 @@ namespace FG
         }
 
         private void Update()
-        {
+        {/*
+            if (secondCamera)
+            {
+                //secondCamera.mouseY = Input.GetAxis("Mouse Y") * cameraController.Sensetivity * Time.deltaTime;
+                //secondCamera.mouseX = Input.GetAxis("Mouse X") * cameraController.Sensetivity * Time.deltaTime;
+                //cameraController.ADS = Input.GetButton("Fire2");
+            }*/
             if (cameraController)
             {
                 cameraController.mouseY = Input.GetAxis("Mouse Y") * cameraController.Sensetivity * Time.deltaTime;
@@ -28,9 +35,9 @@ namespace FG
                 PlayerControllerTest.forwardInput = Input.GetAxis("Vertical") * Time.deltaTime;
                 PlayerControllerTest.sidewaysInput = Input.GetAxis("Horizontal") * Time.deltaTime;
                 //PlayerControllerTest.runInput = Input.GetKey(KeyCode.LeftShift);
-                PlayerControllerTest.runInput = Input.GetButtonDown("Run");
+                //PlayerControllerTest.runInput = Input.GetButtonDown("Run");
                 PlayerControllerTest.jumpInput = Input.GetButtonDown("Jump");
-                PlayerControllerTest.crouchInput = Input.GetButtonDown("Crouch");
+                //PlayerControllerTest.crouchInput = Input.GetButtonDown("Crouch");
             }
 
             Interact();
